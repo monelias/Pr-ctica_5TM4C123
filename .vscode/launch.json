@@ -11,7 +11,7 @@
     "targetArchitecture": "arm",
     "filterStderr": true,
     "serverStarted": "Info\\ :\\ [\\w\\d\\.]*:\\ hardware",
-    "program": "E:\\MSYS\\micro\\practicas\\Practica_4TM4C123\\gcc\\main.axf",
+    "program": "E:\\MSYS\\micro\\respaldos_practicas\\Practica_5TM4C123\\gcc\\main.axf",
     "args": [],
     "stopAtEntry": false,
     "cwd": "${workspaceRoot}",
@@ -20,7 +20,7 @@
     "MIMode": "gdb",
     "setupCommands": [
     { "text" : "target extended-remote :3333"},
-    { "text" : "load E:/MSYS/micro/practicas/Practica_4TM4C123/gcc/main.axf"}
+    { "text" : "load E:/MSYS/micro/respaldos_practicas/Practica_5TM4C123/gcc/main.axf"}
     ]
     }
     ]

@@ -1,5 +1,5 @@
 #include "lib/include.h"
-extern void Configurar_PLL(uint16_t reloj)
+extern void Configurar_PLL_E2(uint16_t reloj)
 {
   // 0) Use RCC2
   SYSCTL->RCC2 |=  0x80000000;  // USERCC2
