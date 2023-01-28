@@ -2,7 +2,9 @@
 //____________________________________ Configuración ADC ____________________________________________________/
 
 /*Para el modulo 1 se asigna secuenciador 1 y los canales 1 3 4 correspondientes a los pines PE2,PE0 y PD3
-*/
+PE0
+PE2
+PD3 */
 extern void Configurar_ADC(void)
 {
 // Pag 352 RCGCADC cuando esta habilitado activa modulos de ADC proporcionando un reloj
@@ -62,7 +64,11 @@ extern void Configurar_ADC(void)
 extern void Lectura_ADC(uint16_t *Result) //**pendiente
 {
     
-    //  módulo M03
+
+//_______________________________Experimento 3_________________//
+    /*utilizando el uart de la practica 3
+  se enviara dato desde interfaz de simulink para controlar la intensidad luminosa
+  usando un led RGB externa*/
        
     ADC1->PSSI = 0x00000002;           // 
     while ((ADC1->RIS & 0x02) == 0)
@@ -71,6 +77,9 @@ extern void Lectura_ADC(uint16_t *Result) //**pendiente
     Result[0] = ADC1->SSFIFO1 & 0xFFF; // lectura de datos para veren grafica
     Result[1] = ADC1->SSFIFO1 & 0xFFF;  
     Result[2] = ADC1->SSFIFO1 & 0xFFF;
-    ADC1->ISC = 0x0002;                
+    ADC1->ISC = 0x0002;  
+       duty[0] = (int) ((Result[0] * 6250) / 4096.0); 
+       duty[1] = (int) ((Result[1] * 6250) / 4096.0); 
+       duty[2] = (int) ((Result[2] * 6250) / 4096.0);                        
 }
 
